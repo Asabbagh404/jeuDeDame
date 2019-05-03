@@ -21,7 +21,7 @@ public class MainView extends JFrame {
                 mouseEventController.setX(e.getX());
                 mouseEventController.setY(e.getY());
                 System.out.println(mouseEventController.getX() + "," + mouseEventController.getY());
-
+                grilleControleur.findSelectedZone(mouseEventController.getX(), mouseEventController.getY());
                 grilleControleur.findPion(mouseEventController.getX(), mouseEventController.getY());
 
 

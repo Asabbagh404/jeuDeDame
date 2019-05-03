@@ -67,6 +67,7 @@ public class GrilleView extends JPanel  {
                     setPionImage("samples/wood-piece-1_d200.png");
                     // Creations des carré bleu lors de la selection
                         if (p.getSelected()==true){
+                            selectedCase.setted4White(p);
                             g.drawImage(caseImage,p.getX()*80+80, p.getY()*80+80, null);
                             g.drawImage(caseImage,p.getX()*80-80, p.getY()*80+80, null);
 
@@ -75,14 +76,16 @@ public class GrilleView extends JPanel  {
                     setPionImage("samples/wood-piece-2_d200.png");
                     if (p.getSelected()==true){
                         // Creations des carré bleu lors de la selection
-                        g.drawImage(caseImage,p.getX()*80+80, p.getY()*80-80, null);
-                        g.drawImage(caseImage,p.getX()*80-80, p.getY()*80-80, null);
+                        selectedCase.setted4Black(p);
+                        g.drawImage(caseImage,selectedCase.getSelPosxD()*80, selectedCase.getSelPosxyD()*80, null);
+                        g.drawImage(caseImage,selectedCase.getSelPosxG()*80, selectedCase.getSelPosxyG()*80, null);
+
                         }
                     }
                 g.drawImage(pionImage, p.getX()*80, p.getY()*80, null);
             }
 
-            repaint();
+
 
 
             //Pour une image de fond

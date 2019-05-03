@@ -2,6 +2,7 @@ package controller;
 
 import model.Grille;
 import model.Pion;
+import model.selectedCase;
 import view.GrilleView;
 import view.MainView;
 
@@ -21,7 +22,7 @@ public class GrilleControleur {
 
             for(int p = 0; p < grille.getTableau().length ; p++) {
                 if ((grille.getTableau()[p].getX()== x) && (grille.getTableau()[p].getY()== y)  ){
-                    System.out.println("Pion trouvé !");
+                    System.out.println("Pion trouvé !" + grille.getTableau()[p]);
                     grille.getTableau()[p].setSelected(true);
                 }else{
                     grille.getTableau()[p].setSelected(false);
@@ -32,24 +33,39 @@ public class GrilleControleur {
 
     }
 
-    public void findSelectedZone(int x, int y){
+    public void findSelectedZone( int x, int y){
+        PionControleur pionControleur = new PionControleur();
 
-        for(int p = 0; p < grille.getTableau().length ; p++) {
-            if ((grille.getTableau()[p].getX()== x+1) && (grille.getTableau()[p].getY()== y-1)
-                    && (grille.getTableau()[p].getSelected()) && (grille.getTableau()[p].getColor()=="Noir") ) {
-                //grille.getTableau()[p].mouvement(droite,x,y, grille)
+            if ((selectedCase.getSelPosxG()== x) && (selectedCase.getSelPosxyG()== y)) {
+                for(int p = 0; p < grille.getTableau().length ; p++) {
+                    if((grille.getTableau()[p].getX()==x+1) && (grille.getTableau()[p].getY()==y+1)) {
+                        pionControleur.mouvement("gauche", x, y, grille.getTableau()[p]);
+                        grille.getTableau()[p].setSelected(false);
+                        selectedCase.resetSelectedCase();
+                        grilleView.repaint();
+                    }
+                }
             }
-            else if ((grille.getTableau()[p].getX()== x-1) && (grille.getTableau()[p].getY()== y-1)
-                        && (grille.getTableau()[p].getSelected())&& (grille.getTableau()[p].getColor()=="Noir") ){
-                //grille.getTableau()[p].mouvement(gauche,x,y, grille)
+            else if ((selectedCase.getSelPosxD()== x) && (selectedCase.getSelPosxyD()== y) ){
+                for(int p = 0; p < grille.getTableau().length ; p++) {
+                    if((grille.getTableau()[p].getX()==x-1) && (grille.getTableau()[p].getY()==y+1)) {
+                        pionControleur.mouvement("droite", x, y, grille.getTableau()[p]);
+                        grille.getTableau()[p].setSelected(false);
+                        selectedCase.resetSelectedCase();
+                        grilleView.repaint();
+                    }
+                }
             }else{
+                selectedCase.setSelPosxG(0);
+                selectedCase.setSelPosxyG(0);
+                selectedCase.setSelPosxD(0);
+                selectedCase.setSelPosxyD(0);
+                grilleView.repaint();
 
             }
+
         }
 
-        grilleView.repaint();
-
-    }
 
     //Getters
     public GrilleView getGrilleView()

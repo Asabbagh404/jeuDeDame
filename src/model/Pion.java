@@ -20,6 +20,10 @@ public class Pion {
         return y;
     }
 
+    public int getid() {
+        return id;
+    }
+
     public void setY(int y) {
         this.y = y;
     }
