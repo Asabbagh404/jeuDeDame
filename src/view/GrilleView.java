@@ -59,6 +59,7 @@ public class GrilleView extends JPanel  {
             setBackgroundImage("samples/wood-board_d200.png");
             g.drawImage(backgroundImage, 0, 0, this);
             setCaseImage("samples/case.png");
+
             //g.drawImage(pionImage, grille.getTableau()[0].getX()*72,grille.getTableau()[0].getY()*72, null);
             //g.drawImage(pionImage, grille.getTableau()[1].getX()*72,grille.getTableau()[0].getY()*72, null);
             for(Pion p : grille.getTableau())
@@ -66,7 +67,7 @@ public class GrilleView extends JPanel  {
                 if (p.getColor()=="Blanc"){
                     setPionImage("samples/wood-piece-1_d200.png");
                     // Creations des carré bleu lors de la selection
-                        if (p.getSelected()==true){
+                        if (p.getSelected() && !p.isDestroyed()){
                             selectedCase.setted4White(p);
                             g.drawImage(caseImage,p.getX()*80+80, p.getY()*80+80, null);
                             g.drawImage(caseImage,p.getX()*80-80, p.getY()*80+80, null);
@@ -74,7 +75,7 @@ public class GrilleView extends JPanel  {
                         }
                 }else{
                     setPionImage("samples/wood-piece-2_d200.png");
-                    if (p.getSelected()==true){
+                    if (p.getSelected() && !p.isDestroyed()){
                         // Creations des carré bleu lors de la selection
                         selectedCase.setted4Black(p);
                         g.drawImage(caseImage,selectedCase.getSelPosxD()*80, selectedCase.getSelPosxyD()*80, null);
@@ -82,7 +83,9 @@ public class GrilleView extends JPanel  {
 
                         }
                     }
-                g.drawImage(pionImage, p.getX()*80, p.getY()*80, null);
+                if (!p.isDestroyed()) {
+                    g.drawImage(pionImage, p.getX() * 80, p.getY() * 80, null);
+                }
             }
 
 

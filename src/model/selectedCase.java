@@ -1,17 +1,25 @@
 package model;
 
 public class selectedCase {
-    private static int SelPosxG = 0;
 
+
+    private static int idPion = 0;
+    private static int SelPosxG = 0;
     private static int SelPosxyG = 0;
 
     private static int SelPosxD = 0;
-
     private static int SelPosxyD = 0;
-
 
     public static int getSelPosxG() {
         return SelPosxG;
+    }
+
+    public static int getIdPion() {
+        return idPion;
+    }
+
+    public static void setIdPion(int idPion) {
+        selectedCase.idPion = idPion;
     }
 
     public static void setSelPosxG(int selPosxG) {
@@ -47,19 +55,25 @@ public class selectedCase {
         selectedCase.setSelPosxyG(p.getY()-1);
         selectedCase.setSelPosxD(p.getX()+1);
         selectedCase.setSelPosxyD(p.getY()-1);
+        selectedCase.setIdPion(p.getid());
+
 
     }
     public static void setted4White(Pion p){
+
         selectedCase.setSelPosxG(p.getX()-1);
         selectedCase.setSelPosxyG(p.getY()+1);
         selectedCase.setSelPosxD(p.getX()+1);
         selectedCase.setSelPosxyD(p.getY()+1);
+        selectedCase.setIdPion(p.getid());
+
     }
     public static void resetSelectedCase(){
         selectedCase.setSelPosxG(0);
         selectedCase.setSelPosxyG(0);
         selectedCase.setSelPosxD(0);
         selectedCase.setSelPosxyD(0);
+        selectedCase.setIdPion(0);
     }
 
 }

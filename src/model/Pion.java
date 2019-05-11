@@ -6,7 +6,18 @@ public class Pion {
     private String color;
     private int id;
     private boolean selected = false;
+    private boolean destroyed = false;
 
+
+    public boolean isDestroyed() {
+        return destroyed;
+    }
+
+    public void setDestroyed(boolean destroyed) {
+        this.destroyed = destroyed;
+        this.setX(-1);
+        this.setY(-1);
+    }
 
     public int getX() {
         return x;
