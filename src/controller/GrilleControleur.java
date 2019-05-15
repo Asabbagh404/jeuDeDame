@@ -9,7 +9,7 @@ import view.MainView;
 
 public class GrilleControleur {
 
-    public Grille grille;
+    private Grille grille;
     GrilleView grilleView;
 
     public GrilleControleur(){
@@ -37,21 +37,17 @@ public class GrilleControleur {
     public void findSelectedZone( int x, int y){
         PionControleur pionControleur = new PionControleur();
         boolean has = false;
-            if ((selectedCase.getSelPosxG()== x) && (selectedCase.getSelPosxyG()== y)) {
-                if (hasPionOnZoneSel(x,y)){has=true;}
-                if (SameColor(grille.getTableau()[findPion(x, y)], grille.getTableau()[selectedCase.getIdPion()])){
-                        pionControleur.mouvement("gauche", has, grille.getTableau()[selectedCase.getIdPion()], grille.getTableau()[findPion(x, y)]);
-                    }else{System.out.println("nop");}
-            }else if ((selectedCase.getSelPosxD()== x) && (selectedCase.getSelPosxyD()== y) ){
-               if (hasPionOnZoneSel(x,y)){has=true;}
-                if (SameColor(grille.getTableau()[findPion(x, y)], grille.getTableau()[selectedCase.getIdPion()])) {
-                    pionControleur.mouvement("droite", has, grille.getTableau()[selectedCase.getIdPion()], grille.getTableau()[findPion(x, y)]);
-                }else{System.out.println("nop");}
-                }
-            else{
-                selectedCase.resetSelectedCase();
-                grilleView.repaint();
+        String Direction = GorD(x,y);
+        boolean hasPionFurther = hasPionFurther(x,y,grille.getTableau()[selectedCase.getIdPion()],Direction);
 
+            if (!Direction.equals("none")) {
+                if (hasPionOnZoneSel(x,y)){has=true;}
+                if (has && hasPionFurther){
+                    return;
+                }
+                if (SameColor(grille.getTableau()[findPion(x, y)], grille.getTableau()[selectedCase.getIdPion()])){
+                        pionControleur.mouvement(Direction, has, grille.getTableau()[selectedCase.getIdPion()], grille.getTableau()[findPion(x, y)]);
+                    }else{System.out.println("nope");}
             }
         grille.getTableau()[selectedCase.getIdPion()].setSelected(false);
         selectedCase.resetSelectedCase();
@@ -59,18 +55,41 @@ public class GrilleControleur {
 
         }
 
-    public boolean hasPionOnZoneSel(int x,int y){
+    private boolean hasPionOnZoneSel(int x,int y){
         return findPion(x, y) != 0;
     }
 
-    public boolean SameColor(Pion pion1, Pion pion2){
-        return pion1.getColor()!=pion2.getColor();
+    private boolean SameColor(Pion pion1, Pion pion2){
+        if (pion1.getid()==0){
+            return true;
+        }
+        return !pion1.getColor().equals(pion2.getColor());
     }
 
     //Getters
     public GrilleView getGrilleView()
     {
         return grilleView;
+    }
+    private boolean hasPionFurther(int x,int y,Pion pion, String direction){
+        int addY = 2;
+        int addX = 2;
+        if (direction.equals("gauche")) {
+            addX = -2;
+        }
+        if (pion.getColor().equals("blanc")) {
+            addY = -2;
+        }
+        return findPion(x + addX, y + addY) == 0;
+    }
+
+    private String GorD(int x, int y){
+        if ((selectedCase.getSelPosxG()== x) && (selectedCase.getSelPosxyG()== y)) {
+            return "gauche";
+        }else if ((selectedCase.getSelPosxD()== x) && (selectedCase.getSelPosxyD()== y) ){
+            return "droite";
+        }
+        return "none";
     }
 
 }

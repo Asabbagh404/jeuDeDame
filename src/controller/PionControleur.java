@@ -13,14 +13,12 @@ public class PionControleur {
         boolean RightToMove = true;
         if (has){
             addIt=1;
-
         }
         System.out.println(selectedCase.getSelPosxD()+ addIt);
         if ((direction == "droite" && selectedCase.getSelPosxD()+ addIt >= 8) || (direction == "gauche" && selectedCase.getSelPosxG()- addIt < 0)  ){
             RightToMove=false;
             System.out.println("ici");
         }
-
 
        if (RightToMove){
            if(has){ toDestroy.setDestroyed(true);}
