@@ -38,9 +38,11 @@ public class GrilleControleur {
         PionControleur pionControleur = new PionControleur();
         boolean has = false;
         String Direction = GorD(x,y);
-        boolean hasPionFurther = hasPionFurther(x,y,grille.getTableau()[selectedCase.getIdPion()],Direction);
+
+
 
             if (!Direction.equals("none")) {
+                boolean hasPionFurther = hasPionFurther(x,y,grille.getTableau()[selectedCase.getIdPion()],Direction);
                 if (hasPionOnZoneSel(x,y)){has=true;}
                 if (has && hasPionFurther){
                     return;
@@ -61,6 +63,7 @@ public class GrilleControleur {
 
     private boolean SameColor(Pion pion1, Pion pion2){
         if (pion1.getid()==0){
+
             return true;
         }
         return !pion1.getColor().equals(pion2.getColor());
@@ -72,15 +75,17 @@ public class GrilleControleur {
         return grilleView;
     }
     private boolean hasPionFurther(int x,int y,Pion pion, String direction){
-        int addY = 2;
-        int addX = 2;
+        int addY = -1;
+        int addX = 1;
         if (direction.equals("gauche")) {
-            addX = -2;
+            addX = -1;
         }
-        if (pion.getColor().equals("blanc")) {
-            addY = -2;
+        if (pion.getColor().equals("Blanc")) {
+            System.out.println("White");
+            addY = 1;
         }
-        return findPion(x + addX, y + addY) == 0;
+        System.out.println("x ="+(x + addX) + "y ="+(y + addY));
+        return findPion(x + addX, y + addY) != 0;
     }
 
     private String GorD(int x, int y){
