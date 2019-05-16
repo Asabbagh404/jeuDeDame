@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e799bcc2-8d45-4bed-8498-38faa6875231" name="Default Changelist" comment="Gestion des incidents">
+    <list default="true" id="e799bcc2-8d45-4bed-8498-38faa6875231" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/untitled/controller/PionControleur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled/controller/PionControleur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/untitled/model/Pion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled/model/Pion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/untitled/view/GrilleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled/view/GrilleView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GrilleControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GrilleControleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/PionControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PionControleur.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,13 +42,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/GrilleControleur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
+            <state relative-caret-position="205">
+              <caret line="76" column="41" lean-forward="true" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1893#1894#0" expanded="true" />
                 <element signature="e#1935#1936#0" expanded="true" />
-                <element signature="e#2307#2308#0" expanded="true" />
+                <element signature="e#2251#2252#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -255,11 +253,12 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557952340234" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557952351400" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -322,7 +321,7 @@
       <workItem from="1556798267647" duration="18746000" />
       <workItem from="1556865876104" duration="21935000" />
       <workItem from="1557309905996" duration="20434000" />
-      <workItem from="1557947976933" duration="4209000" />
+      <workItem from="1557947976933" duration="4418000" />
     </task>
     <task id="LOCAL-00001" summary="Gestion des incidents">
       <created>1557574978075</created>
@@ -331,11 +330,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557574978075</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Controle de pion éloignée">
+      <created>1557952393481</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1557952393481</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146443000" />
+    <option name="totallyTimeSpent" value="146652000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -350,7 +356,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17847025" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.17847025" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.398017" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -408,7 +414,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Gestion des incidents" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gestion des incidents" />
+    <MESSAGE value="Controle de pion éloignée" />
+    <option name="LAST_COMMIT_MESSAGE" value="Controle de pion éloignée" />
   </component>
   <component name="editorHistoryManager">
     <entry file="uml://JAVA/">
@@ -598,13 +605,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/GrilleControleur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
+        <state relative-caret-position="205">
+          <caret line="76" column="41" lean-forward="true" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1893#1894#0" expanded="true" />
             <element signature="e#1935#1936#0" expanded="true" />
-            <element signature="e#2307#2308#0" expanded="true" />
+            <element signature="e#2251#2252#0" expanded="true" />
           </folding>
         </state>
       </provider>
