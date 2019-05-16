@@ -53,6 +53,9 @@ public class Grille {
                 tableau[p] = new Pion(x, y, "Blanc", p);
 
             }
+            if (p==24){
+                tableau[24] = new Pion(-10, -10, "none", p);
+            }
 
         }
         for (int p = 0; p < tableau.length; p++){

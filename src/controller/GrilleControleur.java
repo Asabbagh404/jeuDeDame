@@ -3,6 +3,7 @@ package controller;
 import model.Grille;
 import model.Pion;
 import model.selectedCase;
+import model.Player;
 import view.GrilleView;
 import view.MainView;
 
@@ -11,15 +12,18 @@ public class GrilleControleur {
 
     private Grille grille;
     GrilleView grilleView;
+    Player player1 = new Player("Noire", true);
+    Player player2 = new Player("Blanc", false);
 
     public GrilleControleur(){
-        grille = new Grille(24);
+        grille = new Grille(25);
         grilleView = new GrilleView();
         grilleView.setGrille(grille);
+
     }
 
     public int findPion(int x, int y){
-            int idofPion = 0;
+            int idofPion = 24;
             for(int p = 0; p < grille.getTableau().length ; p++) {
                 if ((grille.getTableau()[p].getX()== x) && (grille.getTableau()[p].getY()== y)  ){
 
@@ -38,7 +42,7 @@ public class GrilleControleur {
         PionControleur pionControleur = new PionControleur();
         boolean has = false;
         String Direction = GorD(x,y);
-
+        Player playerAct;
 
 
             if (!Direction.equals("none")) {
@@ -58,11 +62,11 @@ public class GrilleControleur {
         }
 
     private boolean hasPionOnZoneSel(int x,int y){
-        return findPion(x, y) != 0;
+        return findPion(x, y) != 24;
     }
 
     private boolean SameColor(Pion pion1, Pion pion2){
-        if (pion1.getid()==0){
+        if (pion1.getid()==24){
 
             return true;
         }
@@ -81,11 +85,10 @@ public class GrilleControleur {
             addX = -1;
         }
         if (pion.getColor().equals("Blanc")) {
-            System.out.println("White");
             addY = 1;
         }
-        System.out.println("x ="+(x + addX) + "y ="+(y + addY));
-        return findPion(x + addX, y + addY) != 0;
+
+        return findPion(x + addX, y + addY) != 24;
     }
 
     private String GorD(int x, int y){
@@ -96,5 +99,11 @@ public class GrilleControleur {
         }
         return "none";
     }
+
+
+    private void WhoWin(Player player1, Player player2){
+
+    }
+
 
 }

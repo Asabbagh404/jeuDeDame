@@ -15,14 +15,19 @@ public class PionControleur {
             addIt=1;
         }
         System.out.println(selectedCase.getSelPosxD()+ addIt);
-        if ((direction == "droite" && selectedCase.getSelPosxD()+ addIt >= 8) || (direction == "gauche" && selectedCase.getSelPosxG()- addIt < 0)  ){
+        if ((direction.equals("droite") && selectedCase.getSelPosxD()+ addIt >= 8) || (direction.equals("gauche") && selectedCase.getSelPosxG()- addIt < 0)  ){
             RightToMove=false;
-            System.out.println("ici");
+
+        }
+        if ((selectedCase.getSelPosxyD()+ addIt >= 8) || (selectedCase.getSelPosxyG()- addIt < 0)  ){
+            RightToMove=false;
+
         }
 
        if (RightToMove){
+
            if(has){ toDestroy.setDestroyed(true);}
-            if (pion.getColor() == "Noir" ) {
+            if (pion.getColor().equals("Noir")) {
                 pion.setY(pion.getY() - 1 - addIt);
                 pion.setSelected(false);
 

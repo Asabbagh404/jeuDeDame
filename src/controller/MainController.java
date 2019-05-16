@@ -11,7 +11,7 @@ public class MainController extends JFrame {
     MainView mainView;
     GrilleControleur grilleControleur;
     PionControleur pionControleur;
-
+    PlayerController playerController;
     public void Run() {
         Instance();
         mainView.WindowBuilder();
@@ -30,6 +30,7 @@ public class MainController extends JFrame {
         mainView = new MainView();
         grilleControleur = new GrilleControleur();
         pionControleur = new PionControleur();
+        playerController = new PlayerController();
         //PionControleur.mouvement( grilleControleur.findPion(1,1,"noir"),false);
     }
 }

@@ -64,7 +64,7 @@ public class GrilleView extends JPanel  {
             //g.drawImage(pionImage, grille.getTableau()[1].getX()*72,grille.getTableau()[0].getY()*72, null);
             for(Pion p : grille.getTableau())
             {
-                if (p.getColor()=="Blanc"){
+                if (p.getColor().equals("Blanc")){
                     setPionImage("samples/wood-piece-1_d200.png");
                     // Creations des carré bleu lors de la selection
                         if (p.getSelected() && !p.isDestroyed()){

@@ -15,8 +15,8 @@ public class Pion {
 
     public void setDestroyed(boolean destroyed) {
         this.destroyed = destroyed;
-        this.setX(-1);
-        this.setY(-1);
+        this.setX(-5);
+        this.setY(-5);
     }
 
     public int getX() {
