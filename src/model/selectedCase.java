@@ -4,11 +4,31 @@ public class selectedCase {
 
 
     private static int idPion = 0;
-    private static int SelPosxG = 0;
-    private static int SelPosxyG = 0;
+    private static int SelPosxG = -1;
+    private static int SelPosxyG = -1;
 
-    private static int SelPosxD = 0;
-    private static int SelPosxyD = 0;
+    private static int SelPosxD = -1;
+    private static int SelPosxyD = -1;
+
+    private static String colorG = "bleu";
+    private static String colorD = "bleu";
+
+
+    public static String getColorG() {
+        return colorG;
+    }
+
+    public static void setColorG(String colorG) {
+        selectedCase.colorG = colorG;
+    }
+
+    public static String getColorD() {
+        return colorD;
+    }
+
+    public static void setColorD(String colorD) {
+        selectedCase.colorD = colorD;
+    }
 
     public static int getSelPosxG() {
         return SelPosxG;
@@ -69,11 +89,11 @@ public class selectedCase {
 
     }
     public static void resetSelectedCase(){
-        selectedCase.setSelPosxG(0);
-        selectedCase.setSelPosxyG(0);
-        selectedCase.setSelPosxD(0);
-        selectedCase.setSelPosxyD(0);
-        selectedCase.setIdPion(0);
+        selectedCase.setSelPosxG(-1);
+        selectedCase.setSelPosxyG(-1);
+        selectedCase.setSelPosxD(-1);
+        selectedCase.setSelPosxyD(-1);
+        selectedCase.setIdPion(-1);
     }
 
 }

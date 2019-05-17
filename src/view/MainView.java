@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import controller.PlayerController;
 import controller.mouseEventController;
 
 import controller.GrilleControleur;

@@ -1,5 +1,5 @@
 package model;
-import model.Pion;
+import model.Player;
 import controller.GrilleControleur;
 
 public class Grille {

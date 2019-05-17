@@ -1,12 +1,24 @@
 package model;
 
+import controller.PlayerController;
 import model.Pion;
 
 
-public class Player {
+public  class  Player {
+    private static Player[] players = new Player[2];
     private String colorOfPion;
-    private int nbrOfPion;
     private boolean turn;
+    private Pion pion[];
+
+
+
+    public Pion[] getPion() {
+        return pion;
+    }
+
+    public void setPion(Pion[] pion) {
+        this.pion = pion;
+    }
 
     public String getColorOfPion() {
         return colorOfPion;
@@ -16,13 +28,7 @@ public class Player {
         this.colorOfPion = colorOfPion;
     }
 
-    public int getNbrOfPion() {
-        return nbrOfPion;
-    }
 
-    public void setNbrOfPion(int nbrOfPion) {
-        this.nbrOfPion = nbrOfPion;
-    }
 
     public boolean isTurn() {
         return turn;
@@ -35,5 +41,11 @@ public class Player {
     public Player(String colorOfPion, boolean turn) {
         this.colorOfPion = colorOfPion;
         this.turn = turn;
+        pion = new Pion[12];
+    }
+
+
+    static public Player[] getTableau() {
+        return players;
     }
 }
